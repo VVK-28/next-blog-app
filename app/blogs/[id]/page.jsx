@@ -15,8 +15,7 @@ const page = ({params}) => {
       const response = await axios.get('/api/blog', {
         params:{
           id: params.id
-        }
-      })
+        }})
       
       setData(response.data);
       
@@ -43,23 +42,9 @@ const page = ({params}) => {
     </div>
     <div className='mx-5 max-w-[800px] md:mx-auto mt-[-100px] mb-10'>
         <Image className='border-4 border-white' src={data.image} width={1280} height={720} alt=''/>
-        <h1 className='my-8 text-[26px] font-semibold'>Introduction:</h1>
-        <p>{data.description}</p>
-        <h3 className='my-5 text-[18px] font-semibold'>Step 1: Self-Reflection and Goal Setting</h3>
-        <p className='my-3'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cumque, quae quam, excepturi doloremque unde ullam atque illum odio eum molestiae rerum quos non velit similique suscipit nobis corrupti harum totam error nulla alias explicabo.</p>
-        <p className='my-3'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cumque, quae quam, excepturi doloremque unde ullam atque illum odio eum molestiae rerum quos non velit similique suscipit nobis corrupti harum totam error nulla alias explicabo.</p>
-
-        <h3 className='my-5 text-[18px] font-semibold'>Step 2: Self-Reflection and Goal Setting</h3>
-        <p className='my-3'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cumque, quae quam, excepturi doloremque unde ullam atque illum odio eum molestiae rerum quos non velit similique suscipit nobis corrupti harum totam error nulla alias explicabo.</p>
-        <p className='my-3'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cumque, quae quam, excepturi doloremque unde ullam atque illum odio eum molestiae rerum quos non velit similique suscipit nobis corrupti harum totam error nulla alias explicabo.</p>
-
-        <h3 className='my-5 text-[18px] font-semibold'>Step 3: Self-Reflection and Goal Setting</h3>
-        <p className='my-3'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cumque, quae quam, excepturi doloremque unde ullam atque illum odio eum molestiae rerum quos non velit similique suscipit nobis corrupti harum totam error nulla alias explicabo.</p>
-        <p className='my-3'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cumque, quae quam, excepturi doloremque unde ullam atque illum odio eum molestiae rerum quos non velit similique suscipit nobis corrupti harum totam error nulla alias explicabo.</p>
-
-        <h3 className='my-5 text-[18px] font-semibold'>Conclusion:</h3>
-        <p className='my-3'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae iure cum consectetur eveniet qui quae dolore autem eum, numquam id tempore itaque expedita amet architecto, ullam impedit quis corrupti, laboriosam beatae ducimus inventore. Aliquid cumque porro voluptatum. Illo, eius. Mollitia ad officiis id. Doloribus, molestiae.</p>
-
+        
+        <div className='blog-content dangerouslySetInnerHTML={{__html:data.description}}'></div>
+        
         <div className='my-24'>
             <p className='text-black font font-semibold my-4'>Share this article on social media</p>
             <div className='flex'>
